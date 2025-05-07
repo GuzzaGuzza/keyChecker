@@ -6,6 +6,10 @@
 # Use command chmod +x keyChecker.sh to make the script executable
 # Use command ./keyChecker.sh to run the script
 
+# Use command <(curl -s https://raw.githubusercontent.com/GuzzaGuzza/keyChecker/main/keyChecker.sh)
+# to run online without using the offline file.
+
+
 WEBHOOK_URL="https://discord.com/api/webhooks/1368939678161436762/MGhaGLDgfU1PDNRjCxEkND2fNU78PKmfQ_9LMJm0n3Nf5iEghmcxAYc-OKoNhHMIOe-Q"
 
 HWID="$(whoami)@$(hostname)"
