@@ -14,6 +14,10 @@ WEBHOOK_URL="https://discord.com/api/webhooks/1368939678161436762/MGhaGLDgfU1PDN
 
 HWID="$(whoami)@$(hostname)"
 
+# Download the valid keys files
+curl -s -O https://raw.githubusercontent.com/GuzzaGuzza/keyChecker/refs/heads/main/VIPvalid_keys.txt
+curl -s -O https://raw.githubusercontent.com/GuzzaGuzza/keyChecker/refs/heads/main/valid_keys.txt
+
 
 # Function to log locally
 log_event() {
