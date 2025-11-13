@@ -44,7 +44,7 @@ check_license() {
     if [ "$input_key" == "" ]; then
         echo "🆓 Free Trial Mode Activated!"
         log_event "Trial used by $HWID"
-        notify_discord "🆓 Trial used by \`$HWID\` from IP \`$IP\` at \`$RUN_TIME\`"
+        notify_discord "✅ Valid key [$input_key] used by $HWID from IP $IP at $RUN_TIME"
         return
     fi
 
@@ -52,7 +52,7 @@ check_license() {
         echo "✅ License Key Valid! Welcome!"
         log_event "VALID KEY: $input_key by $HWID"
         echo "Please wait... Checking your key..."
-        notify_discord "✅ Valid key \`$input_key\` used by \`$HWID\` from IP \`$IP\` at \`$RUN_TIME\`"
+        notify_discord "✅ Valid key [$input_key] used by $HWID from IP $IP at $RUN_TIME"
         log_event "KEY: $input_key | IP: $IP | USER: $HWID"
 
     elif grep -Fxq "$input_key" VIPvalid_keys.txt; then
@@ -60,14 +60,14 @@ check_license() {
         echo "✨ You’ve unlocked premium features!"
         log_event "VIP VALID KEY: $input_key by $HWID"
         echo "Please wait... Checking your key..."
-        notify_discord "🤑 VIP Valid key \`$input_key\` used by \`$HWID\` from IP \`$IP\` at \`$RUN_TIME\`"
+        notify_discord "🤑 VIP Valid key [$input_key] used by $HWID from IP $IP at $RUN_TIME"
         log_event "KEY: $input_key | IP: $IP | USER: $HWID"
     
     else
         echo "❌ Invalid Key. Please try again."
         log_event "INVALID KEY: $input_key by $HWID"
         echo "Please wait... Checking your key..."
-        notify_discord "❌ Invalid key attempt: \`$input_key\` by \`$HWID\` from IP \`$IP\` at \`$RUN_TIME\`"
+        notify_discord "❌ Invalid key attempt: [$input_key] by $HWID from IP $IP at $RUN_TIME"
         log_event "KEY: $input_key | IP: $IP | USER: $HWID"
         exit 1
     fi
